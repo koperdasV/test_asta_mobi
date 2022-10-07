@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:test_asta_mobi/resources/padding.dart';
+import 'package:test_asta_mobi/src/model/product.dart';
 import 'package:test_asta_mobi/src/ui/home/components/cashback.dart';
 
 class DetailsName extends StatelessWidget {
   const DetailsName({
-    Key? key,
+    Key? key, required this.product,
   }) : super(key: key);
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +21,17 @@ class DetailsName extends StatelessWidget {
             padding: AppPadding.kdefaultPadding,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  'Айс Лате',
-                  style: TextStyle(
+                  product.name,
+                  style: const TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 Text(
-                  'ціна: 35',
-                  style: TextStyle(
+                  product.price,
+                  style: const TextStyle(
                     fontSize: 21,
                   ),
                 ),
@@ -43,6 +46,7 @@ class DetailsName extends StatelessWidget {
               color: const Color.fromRGBO(243, 220, 9, 1),
               width: 3,
             ),
+            product: product,
           ),
         ],
       ),

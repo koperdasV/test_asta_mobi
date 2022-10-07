@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
+import 'package:test_asta_mobi/src/model/product.dart';
 import 'package:test_asta_mobi/src/ui/home/body.dart';
 import 'package:test_asta_mobi/src/ui/home/components/card.dart';
 
@@ -23,11 +24,11 @@ class SlidingBottomSheet extends StatelessWidget {
         return ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: 10,
+          itemCount: product.length,
           itemBuilder: (context, index) {
-            return const Padding(
-              padding: EdgeInsets.only(left: 16, right: 16, bottom: 8),
-              child: CardWidget(),
+            return Padding(
+              padding: const EdgeInsets.only(left: 16, right: 16, bottom: 8),
+              child: CardWidget(product: product[index]),
             );
           },
         );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_asta_mobi/resources/colors.dart';
+import 'package:test_asta_mobi/src/model/product.dart';
 
 import 'components/card_container.dart';
 import 'components/details_name.dart';
@@ -8,7 +9,9 @@ import 'components/recomendation_card.dart';
 import 'components/recomendation_text.dart';
 
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+  const DetailsPage({Key? key, required this.product}) : super(key: key);
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +30,18 @@ class DetailsPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          DetailsPhoto(size: size),
-          const DetailsName(),
+          DetailsPhoto(size: size,product: product,),
+          DetailsName(product: product,),
           const CardContainer(),
           const RecomendationText(
             text: 'Рекомендації',
           ),
-          RecomendationCard(size: size,)
+          RecomendationCard(
+            size: size,
+            product: product,
+          )
         ],
       ),
     );
   }
 }
-
-

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_asta_mobi/src/model/product.dart';
 
 class Cashback extends StatelessWidget {
   const Cashback({
@@ -7,12 +8,14 @@ class Cashback extends StatelessWidget {
     this.width,
     this.heigth,
     this.border,
+    required this.product,
   }) : super(key: key);
 
   final Color? color;
   final double? width;
   final double? heigth;
   final BoxBorder? border;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +25,12 @@ class Cashback extends StatelessWidget {
       decoration: BoxDecoration(
         border: border,
         borderRadius: const BorderRadius.horizontal(left: Radius.circular(16)),
-        color: color,
+        color: product.cashback == '10' ? color : Colors.purple,
       ),
-      child: const Center(
+      child: Center(
         child: Text(
-          '10%',
-          style: TextStyle(
+          product.cashback,
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w700,
             color: Colors.white,

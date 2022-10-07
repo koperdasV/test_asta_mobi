@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_asta_mobi/src/model/product.dart';
 import 'package:test_asta_mobi/src/ui/details/details_page.dart';
 import 'package:test_asta_mobi/src/ui/home/components/card_location.dart';
 import 'package:test_asta_mobi/src/ui/home/components/card_name.dart';
@@ -8,8 +9,10 @@ import 'package:test_asta_mobi/src/ui/home/components/cashback.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({
-    Key? key,
+    Key? key, required this.product,
   }) : super(key: key);
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class CardWidget extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: ((context) => const DetailsPage()),
+          builder: ((context) => DetailsPage(product: product,)),
         ),
       ),
       child: Stack(
@@ -36,7 +39,7 @@ class CardWidget extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          const CardPhoto(),
+          CardPhoto(product: product,),
           Column(
             children: [
               Padding(
@@ -44,9 +47,9 @@ class CardWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CardName(),
-                    const CardPrice(
-                      text: 'Ціна: 35 ₴',
+                    CardName(product: product),
+                    CardPrice(
+                      product: product,
                       color: Colors.black,
                     ),
                     Padding(
@@ -55,7 +58,7 @@ class CardWidget extends StatelessWidget {
                         children: [
                           Image.asset('images/location.png'),
                           const SizedBox(width: 5),
-                          const CardLocation()
+                          CardLocation(product: product)
                         ],
                       ),
                     )
@@ -64,13 +67,14 @@ class CardWidget extends StatelessWidget {
               ),
             ],
           ),
-          const Positioned(
+          Positioned(
             right: 0,
             top: 16,
             child: Cashback(
               width: 70,
               heigth: 40,
               color: Colors.yellow,
+              product: product,
             ),
           ),
         ],
