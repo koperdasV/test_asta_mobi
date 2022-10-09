@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_asta_mobi/resources/colors.dart';
-import 'package:test_asta_mobi/src/model/product.dart';
+import 'package:test_asta_mobi/src/model/product_freezed.dart';
 import 'package:test_asta_mobi/src/ui/home/components/card_price.dart';
 import 'package:test_asta_mobi/src/ui/home/components/cashback.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_asta_mobi/resources/colors.dart';
-import 'package:test_asta_mobi/src/model/product.dart';
+import 'package:test_asta_mobi/src/model/product_freezed.dart';
 
 class CardLocation extends StatelessWidget {
   const CardLocation({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_asta_mobi/src/model/product.dart';
+import 'package:test_asta_mobi/src/model/product_freezed.dart';
 
 class DetailsPhoto extends StatelessWidget {
   const DetailsPhoto({

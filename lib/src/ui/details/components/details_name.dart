@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_asta_mobi/resources/padding.dart';
-import 'package:test_asta_mobi/src/model/product.dart';
+import 'package:test_asta_mobi/src/model/product_freezed.dart';
 import 'package:test_asta_mobi/src/ui/home/components/cashback.dart';
 
 class DetailsName extends StatelessWidget {

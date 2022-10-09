@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:test_asta_mobi/src/model/product.dart';
+import 'package:test_asta_mobi/src/model/product_freezed.dart';
 
 class CardPhoto extends StatelessWidget {
   const CardPhoto({
-    Key? key, required this.product,
+    Key? key,
+    required this.product,
   }) : super(key: key);
 
   final Product product;
